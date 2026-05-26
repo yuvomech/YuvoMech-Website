@@ -41,40 +41,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <style>
-  /* --- Base Header Styling --- */
-  #header {
-    background: #ffffff;
-    transition: all 0.4s ease-in-out;
-    box-shadow: none; 
-  }
-
-  /* --- Scrolled Header Styling (The "Popped Up" effect) --- */
-  #header.header-scrolled {
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1) !important; 
-    background: rgba(255, 255, 255, 0.98) !important;
-  }
-
-  /* --- Custom Appointment Button --- */
-  .navbar .custom-appointment-btn {
-    background-color: #007bff !important; /* Premium Blue */
-    color: #ffffff !important;
-    padding: 10px 25px !important;
-    border-radius: 50px !important; /* Pill shape */
-    font-weight: 600 !important;
-    margin-left: 15px;
-    transition: all 0.3s ease-in-out !important;
-    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3) !important;
-  }
-
-  .navbar .custom-appointment-btn:hover {
-    background-color: #0056b3 !important; /* Darker blue on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    color: #ffffff !important;
-  }
-</style>
-
-<header id="header" class="header fixed-top">
+  <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
@@ -89,21 +56,29 @@
           <li><a class="nav-link scrollto" href="#team">Courses</a></li>
           <li><a class="nav-link scrollto" href="#contact">Services</a></li>
           
-          <li><a class="getstarted scrollto custom-appointment-btn" href="#about">Schedule an appointment</a></li>
+          <li class="login-divider"><a class="nav-link" href="#mechanic-login">Mechanic Login</a></li>
+          <li><a class="nav-link" href="#user-login">User Login</a></li>
+          
+          <li><a class="getstarted scrollto custom-appointment-btn user-only-action" href="#about">Schedule an appointment</a></li>
        </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav></div>
-</header><script>
-  // This tiny script tells the website to add the shadow when you scroll down
-  window.addEventListener('scroll', () => {
-    const selectHeader = document.querySelector('#header');
-    if (window.scrollY > 50) {
-      selectHeader.classList.add('header-scrolled');
-    } else {
-      selectHeader.classList.remove('header-scrolled');
+</header>```
+
+### 2. Optional: Add a Visual Divider
+To make the login section look distinctly separate from the main menu (like Home, Shop, Events), we can add a subtle vertical line right before the "Mechanic Login" button. 
+
+Add this tiny snippet into your `<style>` block at the top of your page:
+
+```css
+  /* --- Separates Logins from the Main Menu --- */
+  @media (min-width: 992px) {
+    .navbar .login-divider {
+      border-left: 2px solid #eaeaea;
+      margin-left: 15px;
+      padding-left: 5px;
     }
-  });
-</script>
+  }
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
 
