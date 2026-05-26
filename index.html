@@ -690,85 +690,37 @@
 
         <header class="section-header">
           <h2>Team</h2>
-          <p>Our hard working team</p>
+          <p>MEET OUR FOUNDERS</p>
         </header>
 
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center">
 
           <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
+            <div class="member custom-founder-card">
               <div class="member-img">
-                <img src="assets/img/SAIKIRAN KOLA.jpg" class="img-fluid" alt="">
+                <img src="assets/img/SAIKIRAN KOLA.jpg" class="img-fluid" alt="SaiKiran Kola">
                 <div class="social">
-                  <a href="https://twitter.com/SAIKIRANKOLA9?t=NDHT5T9xsP9j-REiu6HGLQ&s=09" target="_blank"><i class="bi bi-twitter"></i></a>
-                  <a href="https://www.facebook.com/saismart.kola?mibextid=ZbWKwL" target="_blank"><i class="bi bi-facebook"></i></a>
-                  <a href="https://instagram.com/sai_kiran_1010?igshid=YmMyMTA2M2Y=" target="_blank"><i class="bi bi-instagram"></i></a>
                   <a href="https://www.linkedin.com/in/saikiran-kola-519b97239" target="_blank"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
-              <div class="member-info">
+              <div class="member-info popup-info">
                 <h4>SaiKiran Kola</h4>
                 <span>CEO</span>
-                
               </div>
             </div>
           </div>
 
-          
-
-       <!--   <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member custom-founder-card">
               <div class="member-img">
-                <img src="assets/img/NISHWITHA PINREDDY.jpg" class="img-fluid" alt="">
+                <img src="assets/img/ARAVIND DUVVAKA.jpg" class="img-fluid" alt="Aravind Duvvaka">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href="https://instagram.com/nishwitha_pinreddy?igshid=YmMyMTA2M2Y=" target="_blank"><i class="bi bi-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/nishwitha-pinreddy-3a106525b" target="_blank"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Nishwitha Pinreddy</h4>
-                <span>COO</span>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/DEVARAJ PASUNURI.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://twitter.com/Deva02117490?t=9JoIzARwWouPBVpRZFblrA&s=08"><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href="https://instagram.com/deva1_075?igshid=YmMyMTA2M2Y="><i class="bi bi-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/pasunuri-devaraj-9a4848250"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Devaraj Pasunuri</h4>
-                <span>CPO</span>
-                
-              </div>
-            </div>
-          </div> -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/ARAVIND DUVVAKA.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href="https://www.facebook.com/aravind.duvvaka?mibextid=ZbWKwL"><i class="bi bi-facebook"></i></a>
-                  <a href="https://instagram.com/aravind_a_v_i?igshid=OGQ2MjdiOTE="><i class="bi bi-instagram"></i></a>
                   <a href="https://www.linkedin.com/in/aravind-duvvaka-6538a4248"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
-              <div class="member-info">
+              <div class="member-info popup-info">
                 <h4>Aravind Duvvaka</h4>
                 <span>CMO</span>
-                
               </div>
             </div>
           </div>
@@ -776,6 +728,54 @@
         </div>
 
       </div>
+
+    </section>```
+
+### 2. The Custom CSS
+To create the rounded corners (fillet), the image zoom highlight, and the "pop up from the back" effect for your names and designations, you need to add some custom styling. 
+
+Copy this code and paste it right before the closing `</head>` tag at the very top of your `index.html` file (or add it to your main `style.css` file if you prefer):
+
+```html
+<style>
+  /* 1. Add fillet (rounded corners) to the whole card */
+  .custom-founder-card {
+    border-radius: 20px !important;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 2. Highlight/zoom the image when the cursor is on it */
+  .custom-founder-card .member-img img {
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+    height: 450px; /* Keeps your images uniform */
+    object-fit: cover;
+  }
+  
+  .custom-founder-card:hover .member-img img {
+    transform: scale(1.08); /* Zooms the image nicely */
+  }
+
+  /* 3. Pop up the Designation from the bottom on hover */
+  .custom-founder-card .popup-info {
+    position: absolute;
+    bottom: -100px; /* Hides it below the image initially */
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95); /* White overlay background */
+    padding: 20px;
+    text-align: center;
+    transition: bottom 0.4s ease-in-out;
+    opacity: 0;
+  }
+
+  .custom-founder-card:hover .popup-info {
+    bottom: 0; /* Slides it up over the image */
+    opacity: 1;
+  }
+</style>
 
     </section><!-- End Team Section -->
 
