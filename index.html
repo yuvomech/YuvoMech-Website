@@ -685,99 +685,122 @@
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
+  <div class="container" data-aos="fade-up">
 
-      <div class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h2>Team</h2>
+      <p>MEET OUR FOUNDERS</p>
+    </header>
 
-        <header class="section-header">
-          <h2>Team</h2>
-          <p>MEET OUR FOUNDERS</p>
-        </header>
+    <div class="row gy-4 justify-content-center">
 
-        <div class="row gy-4 justify-content-center">
-
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="member custom-founder-card">
-              <div class="member-img">
-                <img src="assets/img/SAIKIRAN KOLA.jpg" class="img-fluid" alt="SaiKiran Kola">
-                <div class="social">
-                  <a href="https://www.linkedin.com/in/saikiran-kola-519b97239" target="_blank"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info popup-info">
-                <h4>SaiKiran Kola</h4>
-                <span>CEO</span>
-              </div>
+      <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div class="member custom-founder-card">
+          <div class="member-img">
+            <img src="assets/img/SAIKIRAN KOLA.jpg" class="img-fluid" alt="SaiKiran Kola">
+            <div class="social">
+              <a href="https://www.linkedin.com/in/saikiran-kola-519b97239" target="_blank"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="member custom-founder-card">
-              <div class="member-img">
-                <img src="assets/img/ARAVIND DUVVAKA.jpg" class="img-fluid" alt="Aravind Duvvaka">
-                <div class="social">
-                  <a href="https://www.linkedin.com/in/aravind-duvvaka-6538a4248"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info popup-info">
-                <h4>Aravind Duvvaka</h4>
-                <span>CMO</span>
-              </div>
-            </div>
+          <div class="member-info popup-info">
+            <h4>SaiKiran Kola</h4>
+            <span>CEO</span>
           </div>
-
         </div>
-
       </div>
 
-    </section>```
+      <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+        <div class="member custom-founder-card">
+          <div class="member-img">
+            <img src="assets/img/ARAVIND DUVVAKA.jpg" class="img-fluid" alt="Aravind Duvvaka">
+            <div class="social">
+              <a href="https://www.linkedin.com/in/aravind-duvvaka-6538a4248"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info popup-info">
+            <h4>Aravind Duvvaka</h4>
+            <span>CMO</span>
+          </div>
+        </div>
+      </div>
 
-### 2. The Custom CSS
-To create the rounded corners (fillet), the image zoom highlight, and the "pop up from the back" effect for your names and designations, you need to add some custom styling. 
+    </div>
 
-Copy this code and paste it right before the closing `</head>` tag at the very top of your `index.html` file (or add it to your main `style.css` file if you prefer):
+  </div>
+</section>```
+
+---
+
+### 2. The Custom CSS Code
+Replace the previous `<style>` block at the top of your `index.html` file (right above `</head>`) with this fully enforced version:
 
 ```html
 <style>
-  /* 1. Add fillet (rounded corners) to the whole card */
+  /* 1. Add fillet (rounded corners) and hide unwanted theme backgrounds */
   .custom-founder-card {
     border-radius: 20px !important;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden !important;
+    position: relative !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1) !important;
+    padding: 0 !important; 
+    background: transparent !important; 
   }
 
   /* 2. Highlight/zoom the image when the cursor is on it */
+  .custom-founder-card .member-img {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   .custom-founder-card .member-img img {
-    transition: transform 0.4s ease-in-out;
-    width: 100%;
-    height: 450px; /* Keeps your images uniform */
-    object-fit: cover;
+    transition: transform 0.4s ease-in-out !important;
+    width: 100% !important;
+    height: 450px !important;
+    object-fit: cover !important;
+    display: block !important; 
   }
   
   .custom-founder-card:hover .member-img img {
-    transform: scale(1.08); /* Zooms the image nicely */
+    transform: scale(1.08) !important; 
   }
 
-  /* 3. Pop up the Designation from the bottom on hover */
+  /* 3. Pop up the box from the bottom on hover & hide unwanted static text */
   .custom-founder-card .popup-info {
-    position: absolute;
-    bottom: -100px; /* Hides it below the image initially */
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95); /* White overlay background */
-    padding: 20px;
-    text-align: center;
-    transition: bottom 0.4s ease-in-out;
-    opacity: 0;
+    position: absolute !important;
+    bottom: -100px !important; 
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    padding: 20px !important;
+    text-align: center !important;
+    transition: all 0.4s ease-in-out !important;
+    opacity: 0 !important; 
+    margin: 0 !important;
+    z-index: 10 !important; 
   }
 
   .custom-founder-card:hover .popup-info {
-    bottom: 0; /* Slides it up over the image */
-    opacity: 1;
+    bottom: 0 !important; 
+    opacity: 1 !important;
+  }
+
+  /* 4. Force the Name and Title text to be visible and colored */
+  .custom-founder-card .popup-info h4 {
+    color: #111111 !important; 
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+    display: block !important;
+  }
+
+  .custom-founder-card .popup-info span {
+    color: #007bff !important; 
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    display: block !important; 
+    margin-bottom: 0 !important;
   }
 </style>
-
-    </section><!-- End Team Section -->
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
