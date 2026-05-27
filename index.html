@@ -41,7 +41,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <style>
+ <style>
   /* --- Base Header Styling --- */
   #header {
     background: #ffffff;
@@ -102,6 +102,10 @@
     if (window.scrollY > 50) {
       selectHeader.classList.add('header-scrolled');
     } else {
+      selectHeader.classList.remove('header-scrolled');
+    }
+  });
+</script>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
 
