@@ -129,7 +129,94 @@
 
   </section><!-- End Hero -->
 <!-- ======= expert automotive care  Section ======= -->
-  <main id="main">
+ <style>
+  /* --- Automotive Care Section Styling --- */
+  .automotive-care {
+    padding: 60px 0;
+    background-color: #f6f9ff; 
+  }
+
+  .explore-all-btn {
+    color: #007bff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+
+  .explore-all-btn:hover {
+    color: #0056b3;
+    transform: translateX(3px); 
+  }
+
+  /* Forces the images into 250px dark squares */
+  .care-card {
+    display: block;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 250px; 
+    background: #111111; 
+    text-decoration: none;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .care-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Makes the image dark so white text shows up */
+    transition: opacity 0.3s, transform 0.4s ease-in-out;
+  }
+
+  .care-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+  }
+  
+  .care-card:hover img {
+    opacity: 0.3; 
+    transform: scale(1.08); 
+  }
+
+  /* Places the text on top of the images */
+  .care-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding: 20px;
+  }
+
+  .care-card-overlay h4 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    text-align: right; 
+  }
+
+  .care-card-overlay i {
+    color: #ffffff;
+    font-size: 24px;
+    align-self: flex-end; 
+    transition: transform 0.3s;
+  }
+
+  .care-card:hover .care-card-overlay i {
+    transform: translateX(5px); 
+  }
+</style>
+
 <section id="automotive-care" class="automotive-care">
   <div class="container" data-aos="fade-up">
 
