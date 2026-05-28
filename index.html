@@ -36,6 +36,7 @@
       background: #ffffff;
       transition: all 0.4s ease-in-out;
       box-shadow: none; 
+      z-index: 997;
     }
 
     /* --- Scrolled Header Styling (The "Popped Up" effect) --- */
@@ -63,7 +64,7 @@
     }
 
     /* --- Mobile Responsiveness & Overlap Fixes --- */
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       /* Forces text to wrap safely instead of overlapping */
       h1, h2, h3, h4, h5, h6, p, a, span {
         line-height: 1.5 !important;
@@ -83,15 +84,45 @@
         gap: 15px;
       }
 
-      /* Adjusts the grid cards for smaller phone screens */
       .care-card { height: 220px !important; }
+
+      /* ========================================== */
+      /* BULLETPROOF MOBILE MENU CSS (THE FIX)      */
+      /* ========================================== */
+      .navbar ul {
+        display: none; /* Hides the normal desktop menu on phones */
+      }
       
-      /* Gives the mobile dropdown menu breathing room */
+      .navbar.navbar-mobile ul {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        left: 15px;
+        background: #ffffff;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        padding: 20px;
+        z-index: 999;
+      }
+
+      .navbar.navbar-mobile li { width: 100%; margin-bottom: 10px; }
+      .navbar.navbar-mobile a { color: #333 !important; font-size: 16px; padding: 10px; display: block; }
+      
       .navbar .custom-appointment-btn {
         margin-top: 15px;
         margin-left: 0;
         text-align: center;
         display: inline-block;
+      }
+
+      .mobile-nav-toggle {
+        display: block !important;
+        font-size: 32px;
+        color: #012970;
+        cursor: pointer;
+        z-index: 1000;
       }
     }
   </style>
@@ -140,6 +171,7 @@
 
     if (mobileNavToggle) {
       mobileNavToggle.addEventListener('click', function(e) {
+        e.preventDefault(); // This stops the page from jumping when you tap
         navbar.classList.toggle('navbar-mobile');
         this.classList.toggle('bi-list'); // Removes the 3 lines
         this.classList.toggle('bi-x');    // Replaces them with an 'X'
