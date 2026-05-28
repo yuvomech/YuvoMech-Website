@@ -27,7 +27,12 @@
   <style>
     /* --- Base Header Styling --- */
     #header { background: #ffffff; transition: all 0.4s ease-in-out; box-shadow: none; z-index: 997; }
-    #header.header-scrolled { box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1) !important; background: rgba(255, 255, 255, 0.98) !important; }
+    /* --- Scrolled Header Styling (Ambient Blue Glow) --- */
+    #header.header-scrolled { 
+      background: rgba(255, 255, 255, 0.98) !important; 
+      border-bottom: 2px solid #007bff !important; /* The solid blue line */
+      box-shadow: 0px 5px 20px rgba(0, 123, 255, 0.35) !important; /* The glowing blue ambient light */
+    }
 
     /* --- Custom Appointment Button --- */
     .navbar .custom-appointment-btn {
