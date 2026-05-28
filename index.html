@@ -155,7 +155,7 @@
   </header>
 
   <script>
-    // 1. Header Scroll Shadow
+    // 1. Header Scroll Shadow (Kept for the sleek Odoo effect)
     window.addEventListener('scroll', () => {
       const selectHeader = document.querySelector('#header');
       if (window.scrollY > 50) {
@@ -165,6 +165,8 @@
       }
     });
 
+    // We removed the custom hamburger script so your template's main.js file can take over!
+  </script>
     // 2. Mobile Menu (Hamburger) Toggle
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const navbar = document.querySelector('#navbar');
