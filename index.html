@@ -39,6 +39,46 @@
 </head>
 
 <body>
+  /* ========================================== */
+  /* Mobile Responsiveness & Overlap Fixes      */
+  /* ========================================== */
+  @media (max-width: 768px) {
+    /* 1. Forces text to wrap safely instead of overlapping */
+    h1, h2, h3, h4, h5, h6, p, a, span {
+      line-height: 1.5 !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: normal !important;
+    }
+
+    /* 2. Shrinks massive headers on mobile so they fit the screen */
+    .hero h1 {
+      font-size: 28px !important;
+    }
+    .hero h2 {
+      font-size: 20px !important;
+    }
+
+    /* 3. Fixes the "Expert Automotive Care" title crashing into the button */
+    .automotive-care .d-flex.justify-content-between {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 15px;
+    }
+
+    /* 4. Adjusts the grid cards for smaller phone screens */
+    .care-card {
+      height: 220px !important; 
+    }
+    
+    /* 5. Gives the mobile dropdown menu breathing room */
+    .navbar .custom-appointment-btn {
+      margin-top: 15px;
+      margin-left: 0;
+      text-align: center;
+      display: inline-block;
+    }
+  }
 
   <!-- ======= Header ======= -->
 <style>
